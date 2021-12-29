@@ -60,6 +60,15 @@ border-bottom: 2px solid #363131;
     flex:1;
     margin-left: 20px;
 }
+.menu-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 30px;
+    z-index: 2;
+    font-size: 1.5rem;
+    display:none;
+}
 /*
  estilos del header
 */
@@ -67,7 +76,7 @@ border-bottom: 2px solid #363131;
     width: 100%;
     height: 500px;
     background: url('./img/showcase2.jpg') no-repeat center center/cover;
-    padding-bottom: 50px;
+    padding: 50px;
     margin-bottom: 25px;
     display: flex;
     flex-direction: column;
@@ -172,4 +181,123 @@ border-bottom: 2px solid #363131;
 }
 .links a i {
     font-size: 3rem;
+}
+
+/*footer links*/
+.footer-links{
+    background: #423e3e;
+    color: #616161;
+    font-size: 12px;
+    padding: 35px 0;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+}
+.footer-container ul{
+ margin: 0 auto;
+}
+.footer-container ul li{
+    line-height: 1.8;
+}
+
+.footer{
+    background: #ffff;
+    color: rgb(167, 129, 129);
+    font-size: 12px;
+    padding: 20px 0;
+    text-align: center;
+    padding-bottom:20px 0;
+}
+/*añadimos media querys para disp móviles*/
+
+@media(max-width: 700px){
+    .menu-btn{
+        display: block;
+    }
+    .nav-main ul.nav-menu{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgb(114, 107, 107);
+        padding: 20px;
+        opacity: .9;
+        height: 100%;
+        transform: translateX(-400px);
+        transition: transform .5s ease-in-out;
+    }
+    .nav-main ul.nav-menu.show{
+        transform: translateX(-20px);
+    }
+    .nav-main ul li a{
+        padding: 5px;
+    }
+    .nav-main ul li a:hover{
+    border-bottom: 2px solid #363131;
+    }
+    .nav-main ul.nav-menu-right{
+        margin-right: 50px;
+    }
+
+    .newsCards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cards-banner-one .content{
+      width: 80%;
+    }
+    .cards-banner-two .content{
+        width: 80%;
+      }
+    .footer-links .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width:500px){
+  
+    .nav-main ul.nav-menu{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgb(114, 107, 107);
+        padding: 20px;
+        opacity: .9;
+        height: 100%;
+        transform: translateX(-400px);
+        transition: transform .5s ease-in-out;
+    }
+    .nav-main ul.nav-menu.show{
+        transform: translateX(-20px);
+    }
+    .nav-main ul li a{
+        padding: 5px;
+    }
+    .nav-main ul li a:hover{
+    border-bottom: 2px solid #363131;
+    }
+    .nav-main ul.nav-menu-right{
+        margin-right: 50px;
+    }
+
+    .newsCards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .newsCards img{
+      height: 270px;
+    }
+    .cards-banner-one .content{
+      width: 100%;
+    }
+    .cards-banner-two .content{
+        width: 100%;
+        padding: 60px 20px;
+      }
+    .footer-links .footer-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
